@@ -16,7 +16,7 @@ $sql = "INSERT INTO Transcripts(transcriptID, studentID, courseID, grade, credit
 VALUES ('".$_GET["transcriptID"]."', '".$_GET["studentID"]."', '".$_GET["courseID"]."','".$_GET["grade"]."', '".$_GET["creditsEarned"]."');";
 
 if (mysqli_query($conn, $sql)) {
-	echo "New student record created successfully";
+	echo "New course record created successfully";
 }
 }
 mysqli_close($conn);
