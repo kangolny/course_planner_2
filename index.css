@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=ADLaM Display');
+
+.container {
+    background-color: #004684;
+    color: #FDB927;
+  }
+  
+  div.col h2 {
+      width: 168px;
+      height: 36px;
+      color: #FDB927;
+      font-family: 'ADLaM Display';
+      font-size: 26px;
+      text-align: left;
+  }
+
+  .percent {
+    font-size: 30px;
+    font-family: 'ADLaM Display';
+    width: 100px;
+    padding-left: 20px;
+    overflow: hidden;
+  }
+  
+  .user {
+      width: 78px;
+      height: 78px;
+      background: #EBEBEB;
+      border-radius: 99px 99px 99px 99px;
+    position: absolute;
+  }
+  
+  .search {
+    top: 30px;
+    left: 10px;
+    color: black;
+  }
+
+  input.search-box {
+    margin-bottom: 20px;
+    padding-left: 30px;
+  }
+  
+  .pagination a {
+    margin: 0 10px;
+    width: 36px;
+    height: 36px;
+    padding: 5px 5px 5px 5px;
+    background: #EBEBEB;
+    border-color: #EBEBEB;
+    border-style: solid;
+    border-radius: 6px 6px 6px 6px;
+    text-align: center;
+    color: #444444;
+  }
+
+  .show-entries select {
+    width: 67px;
+    height: 36px;
+    padding: 0px 6px 0px 2px;
+    background: #FFFFFF;
+    color: #444444;
+    border-color: #7A7A7A;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 6px 6px 6px 6px;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .second_row div.col {
+    margin: auto;
+    position: relative;
+  }
+
+
+  #download {
+    float: right;
+  }
+
+div.progress {
+    width: 376px;
+    height: 38px;
+    background: #FFFFFF;
+    border-color: #000000;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 19px 19px 19px 19px;
+    float: left;
+    overflow: hidden;
+}
+
+div.degree-title {
+	height: 35px;
+	color: #FDB927;
+	font-family: "Montserrat";
+	font-weight: 400;
+	font-size: 26px;
+	text-align: left;
+}

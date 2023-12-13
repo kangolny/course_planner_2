@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #004684;
+  }
+
+  
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+  }
+  
+  
+  .login-box img {
+    margin: 0 0 15px;
+    padding: 0;
+    color: #fff;
+  }
+  
+  .guidelines-logo14-1 {
+      width: 527px;
+      height: 348px;
+      background: #00000000;
+      border-radius: 26px 26px 26px 26px;
+      object-fit: none;
+      object-position: 100% 50%;
+  }  
+
+  h2 {
+    text-align: center;
+    color: #FDB927;
+    font-family: 'Times New Roman';
+    font-size: 60px;
+
+  }
+    
+  .btnLogin {
+    background-color: #004684;
+    color: #FDB927;
+    border-radius: 25px;
+    font-size: 36px;
+    width: 500px;
+    height: 65px;
+    text-align: center;
+    outline: solid;
+    outline-color: #FDB927;
+    outline-width: 3px;
+  }
+
+  
+  a {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  
+  a span {
+    position: absolute;
+    display: block;
+  }
+  
+  
+  
+  
+  
+  

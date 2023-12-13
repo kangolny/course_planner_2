@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #004684;
+    height: 100vh;
+  }
+  
+  h2 {
+    font-family: 'Times New Roman';
+    color: #FDB927;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 40px;
+
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  
+  .menu-box {
+    margin: 0 0 15px;
+    padding: 0;
+    color: #fff;
+  }
+  
+  .guidelines-logo14-1 {
+      width: 527px;
+      height: 348px;
+      background: #00000000;
+      border-radius: 26px 26px 26px 26px;
+    object-fit: none;
+    object-position: 100% 50%;
+  }
+  
+  .degree-box {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .degree-box button {
+      width: 479px;
+      height: 126px;
+      padding: 0px 10px 0px 10px;
+      background: #FFFFFF00;
+      color: #FDB927;
+      border-color: #FDB927;
+      border-width: 3px;
+      border-style: solid;
+      border-radius: 59px 59px 59px 59px;
+      font-family: "Helvetica";
+      font-weight: bold;
+      font-size: 36px;
+      text-align: center;
+  }
+  
+  .add button {
+      width: 282px;
+      height: 75px;
+      padding: 0px 10px 0px 10px;
+      background: #FDB927;
+      color: #004684;
+      border-color: #004684;
+      border-width: 3px;
+      border-style: solid;
+      border-radius: 59px 59px 59px 59px;
+      font-family: "Helvetica";
+      font-weight: bold;
+      font-size: 36px;
+      text-align: center;
+    margin: 68px 119px 68px 119px;
+  }
+  
+  .percent {
+    width: 65px;
+      height: 41px;
+      transform: rotate(49deg);
+      color: #FDB927;
+      font-family: "ADLaM Display";
+      font-weight: 400;
+      font-size: 24px;
+      text-align: center;
+    position: relative;
+    float: right;
+  }
+  
+  

@@ -1,4 +1,5 @@
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -12,17 +13,21 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
+$major = $_GET['value'];
+
 $sql = "SELECT
 C.courseSubject,
 C.courseNum,
 C.title,
 C.semesterAvail,
-# year
+T.yearTaken,
 T.grade,
-T.creditsEarned
+T.creditsEarned,
+T.currStatus
 FROM Transcripts T
 JOIN Courses C ON T.courseID = C.courseID
-WHERE T.studentID = 1002;"; //hard-coded iD for test purposes. will replace after login authentication is made.
+WHERE T.studentID = '$_SESSION[userID]' and T.majorID = $major;";
+
  
 // ".$_GET["id"]." '";
 $result = mysqli_query($conn, $sql);
@@ -30,8 +35,36 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows ($result) > 0) {
 	// output data of each row
 	while($row = mysqli_fetch_assoc($result)) {
-		echo "" . $row["courseSubject"]. "\t" . $row["courseNum"]."\t".$row["title"]. "\t" . $row["semesterAvail"]. "\t" . $row["grade"]. "\t" . $row["creditsEarned"]."<br>";
-	}
+    $currStatus = $row["currStatus"];
+
+    switch ($currStatus) {
+      case "Done":
+        $style = "btn btn-success";
+        break;
+      case "WIP":
+        $style = "btn btn-warning";
+        break;
+      case "Review":
+          $style = "btn btn-dark";
+          break;
+      case "Withdrawn":
+        $style = "btn btn-danger";
+        break;
+      default;
+        break;
+
+      }
+
+        echo "<tr  class='text-center align-middle'>
+        <td><u>". $row["courseSubject"] . '-' .$row["courseNum"]."</u></td>
+        <td>". $row["title"] ."</td>
+        <td>". $row["semesterAvail"] ."</td>
+        <td>". $row["yearTaken"] ."</td>
+        <td>". $row["grade"] ."</td>
+        <td>". $row["creditsEarned"] ."</td>
+        <td><button type='button' class='$style'>". $currStatus ."</button></td>
+      </tr>";
+    }
 } else {
 	echo "0 results";
 }
