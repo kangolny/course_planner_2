@@ -16,6 +16,7 @@
     <i class="fa fa-user-large fa-3x"></i>
   </div> -->
   <div class="container">
+    <h1>Welcome to the NCAT Dashboard homepage</h1>
     <div class="row first_row">
       <div class="col">
         <?php
