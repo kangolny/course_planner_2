@@ -2,7 +2,7 @@
 session_start();
 
 $servername = "localhost";
-$servername = process.env.SERVERNAME;
+$servername = getenv('SERVERNAME');
 $username = "root";
 $password = "";
 $dbname = "degree_audit_db";
