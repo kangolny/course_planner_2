@@ -6,10 +6,11 @@ $servername = getenv('SERVERNAME');
 $username = "root";
 $password = "";
 $dbname = "degree_audit_db";
-
-
+$con = mysqli_init();
+// mysqli_ssl_set($con,NULL,NULL, "{path to CA cert}", NULL, NULL);
+mysqli_real_connect($conn, "ncat-cpserver.mysql.database.azure.com", "Ncadmin", getenv('PASSWORD'), getenv('DATABASE'), 3306);
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+
 // Check connection
 if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
