@@ -1,11 +1,14 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "degree_audit_db";
-
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "degree_audit_db";
+$servername = getenv("DB_SERVERNAME");
+$username = getenv("DB_USERNAME");
+$password = getenv("DB_PASSWORD");
+$dbname = getenv("DB_NAME");
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
