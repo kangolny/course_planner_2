@@ -1,15 +1,13 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
 
-// Load environment variables
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+
+
 
 // Database connection settings
-$host = $_ENV['DB_HOST'];
-$username = $_ENV['DB_USER'];
-$password = $_ENV['DB_PASSWORD'];
-$database = $_ENV['DB_NAME'];
+$host = getenv('DB_HOST');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
+$database = getenv('DB_NAME');
 $port = 3306; // Default MySQL port number
 
 // Initialize connection
