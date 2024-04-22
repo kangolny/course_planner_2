@@ -39,4 +39,3 @@ if ($count == 1) {
 	header("location: login.php?error=$error");
 	exit($error);
 }
-?>

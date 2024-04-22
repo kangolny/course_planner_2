@@ -94,8 +94,3 @@ for ($i = $start_loop; $i <= $end_loop; $i++) {
 </nav>
 </div>";
   }
-
-
-
-//mysqli_close($con);
-//?>
