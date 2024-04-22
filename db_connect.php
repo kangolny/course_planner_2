@@ -22,4 +22,3 @@ if (!mysqli_real_connect($con, $host, $username, $password, $database, $port, NU
 }
 
 return $con;
-?>
