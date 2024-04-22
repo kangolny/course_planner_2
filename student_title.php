@@ -4,10 +4,6 @@ session_start();
 // Include the database connection file
 require_once 'db_connect.php';
 
-// Check if the database connection was successful
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
 
 if (isset($_GET['value'])) {
     $major = $_GET['value'];
