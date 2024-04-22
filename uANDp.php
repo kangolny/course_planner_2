@@ -7,8 +7,8 @@ $password = $_POST["DB_PASSWORD"];
 // No mysqli injection allowed
 $username = stripcslashes($username);
 $password = stripcslashes($password);
-$username = mysqli_real_escape_string($conn, $username);
-$password = mysqli_real_escape_string($conn, $password);
+$username = mysqli_real_escape_string($con, $username);
+$password = mysqli_real_escape_string($con, $password);
 
 
 
@@ -22,7 +22,7 @@ FROM Users U
 JOIN Students S ON U.userID = S.studentID
 WHERE S.email = '$username' and U.userPass = '$password';";
 
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $count = mysqli_num_rows($result);
 

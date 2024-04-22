@@ -6,7 +6,7 @@ session_start();
 require_once 'db_connect.php';
 
 // Check if the database connection was successful
-if (!$conn) {
+if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
@@ -37,7 +37,7 @@ $sql = "SELECT S.fname, S.lname, P.degreeLevel, P.degreeType, M.majorName,
         WHERE S.studentID = ? AND M.majorID = ?;";
 
 // Prepare and execute the SQL statement
-$stmt = mysqli_prepare($conn, $sql);
+$stmt = mysqli_prepare($con, $sql);
 if ($stmt) {
     mysqli_stmt_bind_param($stmt, "ii", $userId, $major);
     mysqli_stmt_execute($stmt);
@@ -66,4 +66,4 @@ if ($stmt) {
 }
 
 // Close the database connection
-mysqli_close($conn);
+mysqli_close($con);

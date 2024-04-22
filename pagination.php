@@ -31,7 +31,7 @@ WHERE T.studentID = '$_SESSION[userID]' and T.majorID = $major
 LIMIT $start_from, $rows_per_page;";
 
  
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($con, $sql);
 $total_records = mysqli_num_rows($result);
 $total_pages = ceil($total_records / $rows_per_page);
 $start_loop = $page;
@@ -97,5 +97,5 @@ for ($i = $start_loop; $i <= $end_loop; $i++) {
 
 
 
-//mysqli_close($conn);
+//mysqli_close($con);
 //?>

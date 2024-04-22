@@ -10,7 +10,7 @@ JOIN Majors M ON P.majorID = M.majorID
 WHERE S.studentID = '$_SESSION[userID]';";
  
 // ".$_GET["id"]." '";
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($con, $sql);
 
 
 if (mysqli_num_rows ($result) > 0) {
@@ -33,5 +33,5 @@ if (mysqli_num_rows ($result) > 0) {
 }
 
 
-//mysqli_close($conn);
+//mysqli_close($con);
 //?>
