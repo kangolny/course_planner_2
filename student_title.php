@@ -9,11 +9,11 @@ if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Check if 'value' is present in the GET request
 if (isset($_GET['value'])) {
     $major = $_GET['value'];
 } else {
-    echo "No user data provided in the URL.";
+    $errorMsg = "No user data provided in the URL.\n"; // Error message with a newline for readability in the log file
+    file_put_contents('error_log.txt', $errorMsg, FILE_APPEND); // Append the error message to 'error_log.txt'
     exit; // Stop further execution if the required parameter is not found
 }
 
