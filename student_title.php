@@ -13,7 +13,7 @@ if (!$con) {
 if (isset($_GET['value'])) {
     $major = $_GET['value'];
 } else {
-    echo "No major value provided in the URL.";
+    echo "No user data provided in the URL.";
     exit; // Stop further execution if the required parameter is not found
 }
 
