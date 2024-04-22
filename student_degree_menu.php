@@ -1,20 +1,5 @@
 <?php
-session_start();
-
-$servername = "localhost";
-$servername = getenv('SERVERNAME');
-$username = "root";
-$password = "";
-$dbname = "degree_audit_db";
-$con = mysqli_init();
-// mysqli_ssl_set($con,NULL,NULL, "{path to CA cert}", NULL, NULL);
-mysqli_real_connect($conn, "ncat-cpserver.mysql.database.azure.com", "Ncadmin", getenv('PASSWORD'), getenv('DATABASE'), 3306);
-// Create connection
-
-// Check connection
-if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
-}
+require_once 'db_connect.php';
 
 // NOTES - possible change this to where s (students) joins with t (transcripts) which joins with m (major)
 $sql = "SELECT S.fname, S.lname, M.majorName, M.majorID

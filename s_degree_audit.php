@@ -1,18 +1,5 @@
 <?php
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "degree_audit_db";
-
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
-}
-
+require_once 'db_connect.php';
 $major = $_GET['value'];
 
 $sql = "SELECT

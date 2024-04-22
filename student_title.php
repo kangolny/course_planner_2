@@ -1,22 +1,5 @@
 <?php
-session_start();
-
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $dbname = "degree_audit_db";
-$servername = getenv("DB_SERVERNAME");
-$username = getenv("DB_USERNAME");
-$password = getenv("DB_PASSWORD");
-$dbname = getenv("DB_NAME");
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
-}
-
+require_once 'db_connect.php';
 $major = $_GET['value'];
 
 $sql = "SELECT S.fname, S.lname, P.degreeLevel, P.degreeType, M.majorName, sum(case when T.currStatus = 'Done' then 1  else 0 end) as done

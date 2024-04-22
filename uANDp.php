@@ -1,22 +1,8 @@
 <?php
-session_start();
-$err_message = "";
+require_once 'db_connect.php';
 
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname = "degree_audit_db";
-
-
-// Create connection
-$conn = mysqli_connect($servername, $db_username, $db_password, $dbname);
-// Check connection
-if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
-}
-
-$username = $_POST["username"];
-$password = $_POST["password"];
+$username = $_POST["DB_USER"];
+$password = $_POST["DB_PASSWORD"];
 
 // No mysqli injection allowed
 $username = stripcslashes($username);
