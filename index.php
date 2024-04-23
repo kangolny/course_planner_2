@@ -1,5 +1,6 @@
-<?php error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +23,9 @@ ini_set('display_errors', 'on');
     <h1>Welcome to the NCAT Dashboard homepage</h1>
     <div class="row first_row">
       <div class="col">
-        <?php
+        <!-- <?php
         require('student_title.php');
-      ?>
+      ?> -->
       <div class="col">
         test
       </div>
