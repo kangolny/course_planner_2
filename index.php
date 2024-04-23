@@ -26,6 +26,7 @@ ini_set('display_errors', 'on');
         require('student_title.php');
       ?>
       <div class="col">
+        test
       </div>
     </div>
     <div class="row second_row">
