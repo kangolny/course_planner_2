@@ -23,9 +23,7 @@ ini_set('display_errors', 1);
     <h1>Welcome to the NCAT Dashboard homepage</h1>
     <div class="row first_row">
       <div class="col">
-        <!-- <?php
-        require('student_title.php');
-      ?> -->
+ 
       <div class="col">
         test
       </div>
