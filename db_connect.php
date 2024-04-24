@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 // Database connection settings
 $host = getenv('DB_HOST');
 $username = getenv('DB_USER');
@@ -12,12 +9,9 @@ $port = 3306; // Default MySQL port number
 
 // Initialize connection
 $con = mysqli_init();
-if (!$con) {
-    die('MySQL initialization failed');
-}
-
-// Attempt to connect to the database
-if (!mysqli_real_connect($con, $host, $username, $password, $database, $port, NULL, MYSQLI_CLIENT_SSL)) {
+mysqli_ssl_set($con,NULL,NULL, "G:\DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+// Ensure that the MYSQLI_CLIENT_SSL flag is not used if SSL is not required
+if (!mysqli_real_connect($con, $host, $username, $password, $database, $port, MYSQLI_CLIENT_SSL)) {
     die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
 }
 
