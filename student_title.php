@@ -1,4 +1,10 @@
 <?php
+// Turn on error reporting
+error_reporting(E_ALL);
+
+// Display errors on the page
+ini_set('display_errors', 1);
+
 // Include the database connection file
 require_once 'db_connect.php';
 

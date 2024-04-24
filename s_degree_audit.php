@@ -1,6 +1,16 @@
 <?php
+session_start();
 require_once 'db_connect.php';
-$major = $_GET['value'];
+
+// Check if 'value' is provided in the URL query string
+if (isset($_GET['value'])) {
+  $major = $_GET['value'];
+} else {
+  // Handle the error appropriately, e.g., show an error message or redirect
+  echo "Error: No major specified.";
+  exit; // Stop further execution if 'value' is not provided
+}
+
 
 $sql = "SELECT
 C.courseSubject,

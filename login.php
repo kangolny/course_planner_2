@@ -43,7 +43,7 @@
         <?php echo $_GET['error']; ?></p>
         <?php } ?>
         
-          <div align="center"><span><a href="">New User?</a></span></div>
+          <div align="center"><span><a href="signUp.php">New User?</a></span></div>
         </form>
       </div>
     </div>

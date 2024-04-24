@@ -1,41 +1,48 @@
 <?php
+session_start();  // Start the session at the beginning of the script
+
 require_once 'db_connect.php';
 
-$username = $_POST["DB_USER"];
-$password = $_POST["DB_PASSWORD"];
+$username = $_POST["username"];  // Assuming the form field for username is named 'username'
+$password = $_POST["password"];  // Assuming the form field for password is named 'password'
 
-// No mysqli injection allowed
-$username = stripcslashes($username);
-$password = stripcslashes($password);
+// Sanitize input
 $username = mysqli_real_escape_string($con, $username);
 $password = mysqli_real_escape_string($con, $password);
 
+// Prepare SQL statement to fetch the user, hashed password, and role
+$sql = "SELECT userPass, userRole, email FROM users WHERE email = ?";  // Adjust the field and table names as necessary
 
+$stmt = mysqli_prepare($con, $sql);
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $hashedPassword, $userRole, $email);
+    mysqli_stmt_fetch($stmt);
+    mysqli_stmt_close($stmt);
 
-$sql = "SELECT
-U.userID,
-U.userRole,
-U.userPass,
-S.studentID,
-S.email
-FROM Users U
-JOIN Students S ON U.userID = S.studentID
-WHERE S.email = '$username' and U.userPass = '$password';";
+    // Verify the password
+    if (password_verify($password, $hashedPassword)) {
+        // Password is correct
+        // Store userRole and email in session
+        $_SESSION['userRole'] = $userRole;
+        $_SESSION['email'] = $email;
 
-$result = mysqli_query($con, $sql);
-$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-$count = mysqli_num_rows($result);
-
-if ($count == 1) {
-	//session_register("username");
-	$_SESSION['userID'] = $row["userID"];
-	$_SESSION['fname'] = $row['fname'];
-	$_SESSION['lname'] = $row['lname'];
-	
-	header("location: student_menu.php");
-
+        // Redirect based on role
+        if ($userRole === 'admin') {
+            header('Location: /gary/admin.php'); // Adjust the path as needed
+            exit();
+        } else {
+            header('Location: /gary/studeent_title.php'); // Adjust the path as needed
+            exit();
+        }
+    } else {
+        // Password is not correct
+        echo "Password incorrect.";
+    }
 } else {
-	$error = "Your username and/or password is invalid.";
-	header("location: login.php?error=$error");
-	exit($error);
+    echo "Error preparing statement: " . mysqli_error($con);
 }
+
+mysqli_close($con);
+?>
