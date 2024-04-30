@@ -80,7 +80,7 @@ ini_set('display_errors', 1);
   </div>
 </div>
       <!-- Pagination php file goes here (WARNING) Currently under construction -->
-      <!--<?php require('pagination.php'); ?> -->
+      <?php require('pagination.php'); ?>
 
     </div>
     <div class="row sixth_row">
